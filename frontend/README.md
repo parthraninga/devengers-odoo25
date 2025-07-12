@@ -97,20 +97,60 @@ npm run dev
 ## Tech Stack
 
 ### Frontend
-- React.js with JSX
-- Vite as build tool
-- Tailwind CSS for styling
-- shadcn-ui component library
-- Context API for state management
-- Axios for API requests
+- **Framework**: React.js with JSX
+- **Build Tool**: Vite for fast development and optimized builds
+- **Styling**: 
+  - Tailwind CSS for utility-first styling
+  - shadcn-ui component library for consistent UI elements
+  - Dark/light mode theming support
+- **State Management**: 
+  - Context API with custom hooks
+  - Multiple context providers (Auth, Admin, Socket, Theme)
+- **HTTP Client**: Axios with interceptors for API requests
+- **Form Handling**: React Hook Form with Zod validation
+- **UI Components**:
+  - Custom reusable components
+  - Responsive layouts with mobile-first design
+- **Navigation**: React Router v6 with protected routes
+- **Notifications**: React Hot Toast for user notifications
+- **Real-time Features**: Socket.io client for chat and notifications
 
 ### Backend
-- Node.js with Express
-- MongoDB with Mongoose ODM
-- JWT for authentication
-- Multer for file uploads
-- Cloudinary for image storage
-- Redis for caching and rate limiting
+- **Runtime**: Node.js with Express framework
+- **Database**: 
+  - MongoDB with Mongoose ODM
+  - Data validation with Zod schemas
+- **Authentication**: 
+  - JWT for token-based authentication
+  - Passport.js for OAuth strategies
+  - Multiple login methods:
+    - Email/password authentication
+    - Google OAuth
+    - Facebook OAuth
+    - Twitter OAuth
+    - Apple Sign In
+- **File Handling**:
+  - Multer for file uploads and validation
+  - Cloudinary for cloud image storage and transformations
+- **Caching & Performance**:
+  - Redis for data caching
+  - Rate limiting middleware for API protection
+  - Response compression
+- **Real-time Communication**: 
+  - Socket.io for bidirectional communication
+  - Real-time chat functionality
+  - Live notifications
+- **Security**:
+  - Helmet for securing HTTP headers
+  - CORS configuration
+  - Input sanitization
+  - XSS protection
+- **Email & SMS**:
+  - Nodemailer for transactional emails
+  - Twilio integration for SMS notifications and OTP
+- **Job Processing**:
+  - Redis-based queue for background processing
+  - Worker processes for handling asynchronous tasks
 
 ## Repository
 
