@@ -35,7 +35,7 @@ infra/       # Docker and CI configs
 README.md    # Project overview
 ```
 
-## Commit Guidelines
+## Commit Protocols
 
 We follow **Conventional Commits**:
 
