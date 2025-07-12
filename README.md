@@ -21,7 +21,6 @@
 ```
 frontend/    # React & Tailwind app
 backend/     # Odoo addons and API services
-ml/          # Prototype notebooks and models
 infra/       # Docker and CI configs
 README.md    # Project overview
 ```
