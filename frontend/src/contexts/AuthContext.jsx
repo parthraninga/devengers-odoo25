@@ -1,147 +1,244 @@
+import React, { createContext, useState, useContext, useEffect } from "react";
+import { toast } from "react-toastify";
+import authService from "../services/authService";
+import userService from "../services/userService";
 
-import { createContext, useContext, useState, useEffect } from 'react';
-import { toast } from 'sonner';
-
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-  // Mock authentication - in real app this would connect to your backend
-  useEffect(() => {
-    const token = localStorage.getItem('accessToken');
-    const userData = localStorage.getItem('userData');
+    useEffect(() => {
+        // Check if user is already logged in
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+        setLoading(false);
+    }, []);
+
+    // Helper function to handle successful login
+    const handleLoginSuccess = async (response, userEmail = null, userMobile = null) => {
+        const { accessToken, refreshToken } = response.tokens;
+        
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
+        
+        // Get user data
+        let userData;
+        if (userEmail) {
+            const responseUser = await userService.getUserByEmail(userEmail);
+            userData = responseUser.data;
+        } else if (userMobile) {
+            // You would need to implement this endpoint in your backend
+            const responseUser = await userService.getUserByMobile(userMobile);
+            userData = responseUser.data;
+        }
+        
+        localStorage.setItem("user", JSON.stringify(userData));
+        setUser(userData);
+        
+        return {
+            success: true,
+            message: response.message
+        };
+    };
+
+    // User registration
+    const addUser = async (userData) => {
+        try {
+            const response = await authService.addUser(userData);
+            toast.success("User registered successfully!");
+            return {
+                success: true,
+                data: response,
+            };
+        } catch (error) {
+            const message = error.response?.data?.message || "User registration failed";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
+
+    // 1. Email + Password login
+    const loginWithEmailPassword = async (email, password) => {
+        try {
+            const response = await authService.loginWithEmailPassword(email, password);
+            toast.success("Login successful!");
+            return await handleLoginSuccess(response, email);
+        } catch (error) {
+            const message = error.response?.data?.message || "Login failed";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
     
-    if (token && userData) {
-      try {
-        setUser(JSON.parse(userData));
-      } catch (error) {
-        console.error('Error parsing user data:', error);
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('userData');
-      }
-    }
+    // 2. Mobile + Password login
+    const loginWithMobilePassword = async (mobile, password) => {
+        try {
+            const response = await authService.loginWithMobilePassword(mobile, password);
+            toast.success("Login successful!");
+            return await handleLoginSuccess(response, null, mobile);
+        } catch (error) {
+            const message = error.response?.data?.message || "Login failed";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
     
-    setLoading(false);
-  }, []);
+    // 3. Email + OTP login
+    const sendEmailOTP = async (email) => {
+        try {
+            const response = await authService.sendEmailOTP(email);
+            toast.success("OTP sent to your email!");
+            return {
+                success: true,
+                message: response.message,
+            };
+        } catch (error) {
+            const message = error.response?.data?.message || "Failed to send OTP";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
+    
+    const verifyEmailOTP = async (email, otp) => {
+        try {
+            const response = await authService.verifyEmailOTP(email, otp);
+            toast.success("OTP verified successfully!");
+            return await handleLoginSuccess(response, email);
+        } catch (error) {
+            const message = error.response?.data?.message || "OTP verification failed";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
+    
+    // 4. Mobile + OTP login
+    const sendMobileOTP = async (mobile) => {
+        try {
+            const response = await authService.sendMobileOTP(mobile);
+            toast.success("OTP sent to your mobile!");
+            return {
+                success: true,
+                message: response.message,
+            };
+        } catch (error) {
+            const message = error.response?.data?.message || "Failed to send OTP";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
+    
+    const verifyMobileOTP = async (mobile, otp) => {
+        try {
+            const response = await authService.verifyMobileOTP(mobile, otp);
+            toast.success("OTP verified successfully!");
+            return await handleLoginSuccess(response, null, mobile);
+        } catch (error) {
+            const message = error.response?.data?.message || "OTP verification failed";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
 
-  const login = async (email, password) => {
-    try {
-      setLoading(true);
-      
-      // Mock API call - replace with real authentication
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      const mockUser = {
-        id: 1,
-        name: email.split('@')[0],
-        email: email,
-        avatar: null,
-        joinDate: new Date().toISOString(),
-        totalSwaps: 0,
-        rating: 5.0
-      };
-      
-      const mockToken = 'mock-jwt-token-' + Date.now();
-      
-      localStorage.setItem('accessToken', mockToken);
-      localStorage.setItem('userData', JSON.stringify(mockUser));
-      
-      setUser(mockUser);
-      toast.success('Successfully logged in!');
-      
-      return { success: true };
-    } catch (error) {
-      toast.error('Login failed. Please try again.');
-      return { success: false, error: error.message };
-    } finally {
-      setLoading(false);
-    }
-  };
+    // Logout user
+    const logoutUser = async () => {
+        try {
+            const refreshToken = localStorage.getItem("refreshToken");
+            if (refreshToken) {
+                await authService.logoutUser(refreshToken);
+                toast.success("Logged out successfully");
+            }
+        } catch (error) {
+            toast.error(error.response?.data?.message || "Logout failed");
+        } finally {
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("refreshToken");
+            localStorage.removeItem("user");
+            setUser(null);
+        }
+    };
 
-  const register = async (userData) => {
-    try {
-      setLoading(true);
-      
-      // Mock API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      const newUser = {
-        id: Date.now(),
-        name: userData.name,
-        email: userData.email,
-        avatar: null,
-        joinDate: new Date().toISOString(),
-        totalSwaps: 0,
-        rating: 5.0
-      };
-      
-      const mockToken = 'mock-jwt-token-' + Date.now();
-      
-      localStorage.setItem('accessToken', mockToken);
-      localStorage.setItem('userData', JSON.stringify(newUser));
-      
-      setUser(newUser);
-      toast.success('Account created successfully!');
-      
-      return { success: true };
-    } catch (error) {
-      toast.error('Registration failed. Please try again.');
-      return { success: false, error: error.message };
-    } finally {
-      setLoading(false);
-    }
-  };
+    // Keep existing methods
+    const forgetPassword = async (email) => {
+        try {
+            const response = await authService.forgetPassword(email);
+            toast.success("Password reset link sent to your email!");
+            return {
+                success: true,
+                message: response.message,
+            };
+        } catch (error) {
+            const message = error.response?.data?.message || "Forget password failed";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
 
-  const logout = () => {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('userData');
-    setUser(null);
-    toast.success('Logged out successfully');
-  };
+    const resetPassword = async (email, newPassword) => {
+        try {
+            const response = await authService.resetPassword(email, newPassword);
+            toast.success("Password has been reset successfully.");
+            return {
+                success: true,
+                message: response.message,
+            };
+        } catch (error) {
+            const message = error.response?.data?.message || "Reset password failed";
+            toast.error(message);
+            return {
+                success: false,
+                message: message,
+            };
+        }
+    };
 
-  const updateProfile = async (profileData) => {
-    try {
-      setLoading(true);
-      
-      // Mock API call
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      const updatedUser = { ...user, ...profileData };
-      localStorage.setItem('userData', JSON.stringify(updatedUser));
-      setUser(updatedUser);
-      
-      toast.success('Profile updated successfully!');
-      return { success: true };
-    } catch (error) {
-      toast.error('Failed to update profile');
-      return { success: false, error: error.message };
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const value = {
-    user,
-    login,
-    register,
-    logout,
-    updateProfile,
-    loading
-  };
-
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+    return (
+        <AuthContext.Provider
+            value={{
+                user,
+                loading,
+                isAuthenticated: !!user,
+                addUser,
+                loginWithEmailPassword,
+                loginWithMobilePassword,
+                sendEmailOTP,
+                verifyEmailOTP,
+                sendMobileOTP,
+                verifyMobileOTP,
+                logoutUser,
+                forgetPassword,
+                resetPassword
+            }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-};
+export const useAuth = () => useContext(AuthContext);
