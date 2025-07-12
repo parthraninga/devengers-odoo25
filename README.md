@@ -6,6 +6,8 @@
 
 ## Problem Statement
 
+video link :- https://drive.google.com/file/d/1hiKjSRlJrHllnNcYTJ2VmWOj3bfAt2qJ/view?usp=sharing
+
 ### Overview
 Develop **ReWear**, a web-based platform that enables users to exchange unused clothing through **direct swaps** or a **point-based redemption system**.
 
