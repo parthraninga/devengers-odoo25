@@ -49,24 +49,24 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-cyan-50 dark:from-gray-950 dark:via-purple-950/20 dark:to-gray-900 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-red-orange-50 via-red-orange-100 to-red-orange-200 dark:from-gray-950 dark:via-red-orange-950/20 dark:to-gray-900 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-teal-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-red-orange-400/20 to-red-orange-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-red-orange-500/20 to-red-orange-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-red-orange-300/10 to-red-orange-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="w-full max-w-md relative z-10">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/25">
+            <div className="w-16 h-16 bg-gradient-to-r from-red-orange-600 to-red-orange-700 rounded-2xl flex items-center justify-center shadow-2xl shadow-red-orange-500/25 glow-red-orange">
               <Sparkles className="h-8 w-8 text-white" />
             </div>
           </div>
           <h1 className="text-4xl font-bold mb-2">
-            <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
+            <span className="text-gradient">
               Join ReWear
             </span>
           </h1>
@@ -75,7 +75,7 @@ const Register = () => {
           </p>
         </div>
 
-        <Card className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-white/20 shadow-2xl shadow-purple-500/10">
+        <Card className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-white/20 shadow-2xl shadow-red-orange-500/10 card-hover">
           <CardHeader className="text-center pb-6">
             <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
               Create Account
@@ -99,7 +99,7 @@ const Register = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-purple-500 focus:ring-purple-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-red-orange-500 focus:ring-red-orange-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -118,7 +118,7 @@ const Register = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email"
-                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-purple-500 focus:ring-purple-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-red-orange-500 focus:ring-red-orange-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -137,7 +137,7 @@ const Register = () => {
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="Create a strong password"
-                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-purple-500 focus:ring-purple-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-red-orange-500 focus:ring-red-orange-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -156,7 +156,7 @@ const Register = () => {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     placeholder="Confirm your password"
-                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-purple-500 focus:ring-purple-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-red-orange-500 focus:ring-red-orange-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -165,7 +165,7 @@ const Register = () => {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-12 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold rounded-xl shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-[1.02] group"
+                className="w-full h-12 bg-gradient-to-r from-red-orange-600 to-red-orange-700 hover:from-red-orange-700 hover:to-red-orange-800 text-white font-semibold rounded-xl shadow-lg shadow-red-orange-500/25 hover:shadow-red-orange-500/40 transition-all duration-300 transform hover:scale-[1.02] group"
               >
                 {isLoading ? (
                   <div className="flex items-center space-x-2">
@@ -200,7 +200,7 @@ const Register = () => {
                   <span>Secure platform</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-700 dark:text-gray-300">
-                  <Sparkles className="h-4 w-4 text-purple-500" />
+                  <Sparkles className="h-4 w-4 text-red-orange-500" />
                   <span>Free to use</span>
                 </div>
               </div>
@@ -211,7 +211,7 @@ const Register = () => {
                 Already have an account?{' '}
                 <Link 
                   to="/login" 
-                  className="font-semibold text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors"
+                  className="font-semibold text-red-orange-600 hover:text-red-orange-700 dark:text-red-orange-400 dark:hover:text-red-orange-300 transition-colors"
                 >
                   Sign in here
                 </Link>

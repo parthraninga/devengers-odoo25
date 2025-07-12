@@ -33,23 +33,23 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-950 dark:via-indigo-950/20 dark:to-gray-900 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-red-orange-50 via-red-orange-100 to-red-orange-200 dark:from-gray-950 dark:via-red-orange-950/20 dark:to-gray-900 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-pink-400/20 to-rose-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-gradient-to-r from-red-orange-400/20 to-red-orange-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-red-orange-300/20 to-red-orange-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="w-full max-w-md relative z-10">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-indigo-500/25">
+            <div className="w-16 h-16 bg-gradient-to-r from-red-orange-500 to-red-orange-600 rounded-2xl flex items-center justify-center shadow-2xl glow-red-orange">
               <Sparkles className="h-8 w-8 text-white" />
             </div>
           </div>
           <h1 className="text-4xl font-bold mb-2">
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-gradient">
               Welcome Back
             </span>
           </h1>
@@ -58,7 +58,7 @@ const Login = () => {
           </p>
         </div>
 
-        <Card className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-white/20 shadow-2xl shadow-indigo-500/10">
+        <Card className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-white/20 shadow-2xl shadow-red-orange-500/10 card-hover">
           <CardHeader className="text-center pb-6">
             <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">
               Sign In
@@ -81,7 +81,7 @@ const Login = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-indigo-500 focus:ring-indigo-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+                    className="pl-10 h-12 border-gray-200 dark:border-gray-700 focus:border-red-orange-500 focus:ring-red-orange-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -99,7 +99,7 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
-                    className="pl-10 pr-10 h-12 border-gray-200 dark:border-gray-700 focus:border-indigo-500 focus:ring-indigo-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
+                    className="pl-10 pr-10 h-12 border-gray-200 dark:border-gray-700 focus:border-red-orange-500 focus:ring-red-orange-500 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm"
                     required
                   />
                   <button
@@ -118,7 +118,7 @@ const Login = () => {
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
-                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-red-orange-600 focus:ring-red-orange-500 border-gray-300 rounded"
                   />
                   <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
                     Remember me
@@ -126,7 +126,7 @@ const Login = () => {
                 </div>
 
                 <div className="text-sm">
-                  <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors">
+                  <a href="#" className="font-medium text-red-orange-600 hover:text-red-orange-500 dark:text-red-orange-400 dark:hover:text-red-orange-300 transition-colors">
                     Forgot password?
                   </a>
                 </div>
@@ -135,7 +135,7 @@ const Login = () => {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-12 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-300 transform hover:scale-[1.02] group"
+                className="w-full h-12 bg-gradient-to-r from-red-orange-600 to-red-orange-700 hover:from-red-orange-700 hover:to-red-orange-800 text-white font-semibold rounded-xl shadow-lg shadow-red-orange-500/25 hover:shadow-red-orange-500/40 transition-all duration-300 transform hover:scale-[1.02] group"
               >
                 {isLoading ? (
                   <div className="flex items-center space-x-2">
@@ -165,7 +165,7 @@ const Login = () => {
             <div className="grid grid-cols-2 gap-3">
               <Button
                 variant="outline"
-                className="h-12 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl"
+                className="h-12 border-gray-200 dark:border-gray-700 hover:bg-red-orange-50 dark:hover:bg-red-orange-900/20 hover:border-red-orange-200 dark:hover:border-red-orange-700 rounded-xl transition-all duration-300"
               >
                 <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -177,7 +177,7 @@ const Login = () => {
               </Button>
               <Button
                 variant="outline"
-                className="h-12 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl"
+                className="h-12 border-gray-200 dark:border-gray-700 hover:bg-red-orange-50 dark:hover:bg-red-orange-900/20 hover:border-red-orange-200 dark:hover:border-red-orange-700 rounded-xl transition-all duration-300"
               >
                 <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -191,7 +191,7 @@ const Login = () => {
                 Don't have an account?{' '}
                 <Link 
                   to="/register" 
-                  className="font-semibold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors"
+                  className="font-semibold text-red-orange-600 hover:text-red-orange-700 dark:text-red-orange-400 dark:hover:text-red-orange-300 transition-colors"
                 >
                   Create one now
                 </Link>

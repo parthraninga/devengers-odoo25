@@ -1,0 +1,31 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6465;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff3031;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ed1516;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shirt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fff1f1;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="64" height="64" rx="16" fill="url(#bg-gradient)" filter="url(#glow)"/>
+  
+  <!-- Shirt icon -->
+  <path d="M20 26L24 22H40L44 26V30L40 32V52H24V32L20 30V26Z" fill="url(#shirt-gradient)" stroke="none"/>
+  <path d="M24 22V18C24 17 25 16 26 16H38C39 16 40 17 40 18V22" fill="none" stroke="url(#shirt-gradient)" stroke-width="2"/>
+  
+  <!-- R letter overlay -->
+  <text x="32" y="44" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="url(#shirt-gradient)">R</text>
+</svg>

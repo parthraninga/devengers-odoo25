@@ -1,0 +1,24 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6465;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff3031;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ed1516;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shirt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fff1f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="32" height="32" rx="8" fill="url(#bg-gradient)"/>
+  
+  <!-- Shirt icon -->
+  <path d="M10 13L12 11H20L22 13V15L20 16V26H12V16L10 15V13Z" fill="url(#shirt-gradient)" stroke="none"/>
+  <path d="M12 11V9C12 8.5 12.5 8 13 8H19C19.5 8 20 8.5 20 9V11" fill="none" stroke="url(#shirt-gradient)" stroke-width="1"/>
+  
+  <!-- R letter overlay -->
+  <text x="16" y="22" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="url(#shirt-gradient)">R</text>
+</svg>

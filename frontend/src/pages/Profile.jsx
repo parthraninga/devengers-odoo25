@@ -70,13 +70,13 @@ const Profile = () => {
       blue: 'bg-blue-500/10 text-blue-600',
       green: 'bg-green-500/10 text-green-600',
       yellow: 'bg-yellow-500/10 text-yellow-600',
-      purple: 'bg-purple-500/10 text-purple-600'
+      purple: 'bg-red-orange-500/10 text-red-orange-600'
     };
     return colors[color] || colors.blue;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-cyan-50 dark:from-gray-950 dark:via-purple-950/20 dark:to-gray-900 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-red-orange-50 via-red-orange-100 to-red-orange-200 dark:from-gray-950 dark:via-red-orange-950/20 dark:to-gray-900 py-8">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Profile Header */}
         <motion.div
@@ -84,7 +84,7 @@ const Profile = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <Card className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-white/20 shadow-2xl shadow-purple-500/10">
+          <Card className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-white/20 shadow-2xl shadow-red-orange-500/10 card-hover">
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 {/* Avatar */}
@@ -209,7 +209,7 @@ const Profile = () => {
                         value={profileData.bio}
                         onChange={(e) => setProfileData(prev => ({ ...prev, bio: e.target.value }))}
                         rows={3}
-                        className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50"
+                        className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-red-orange-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50"
                       />
                     </div>
                     <Button onClick={handleSave} className="w-full h-12">
@@ -239,7 +239,7 @@ const Profile = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 * index }}
-                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 p-4 hover:shadow-lg transition-all duration-300"
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-red-orange-100 to-red-orange-200 dark:from-red-orange-900/20 dark:to-red-orange-800/20 p-4 hover:shadow-lg transition-all duration-300 card-hover"
                       >
                         <img
                           src={item.image}
@@ -251,7 +251,7 @@ const Profile = () => {
                           <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(item.status)}`}>
                             {item.status}
                           </span>
-                          <span className="text-sm font-medium text-purple-600">{item.points} pts</span>
+                          <span className="text-sm font-medium text-red-orange-600">{item.points} pts</span>
                         </div>
                       </motion.div>
                     ))}
@@ -303,9 +303,9 @@ const Profile = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="backdrop-blur-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-200/50 dark:border-purple-800/50">
+              <Card className="backdrop-blur-xl bg-gradient-to-br from-red-orange-500/10 to-red-orange-600/10 border border-red-orange-200/50 dark:border-red-orange-800/50 card-hover">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-orange-500 to-red-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 glow-red-orange">
                     <Award className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Eco Warrior</h3>

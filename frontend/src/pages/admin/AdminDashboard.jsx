@@ -16,10 +16,10 @@ const AdminDashboard = () => {
   ];
 
   const categoryData = [
-    { name: 'Clothing', value: 45, color: '#8B5CF6' },
-    { name: 'Accessories', value: 25, color: '#EC4899' },
-    { name: 'Shoes', value: 20, color: '#06B6D4' },
-    { name: 'Others', value: 10, color: '#F59E0B' },
+    { name: 'Clothing', value: 45, color: '#ff6465' },
+    { name: 'Accessories', value: 25, color: '#ff3031' },
+    { name: 'Shoes', value: 20, color: '#ffc5c5' },
+    { name: 'Others', value: 10, color: '#ff8082' },
   ];
 
   const recentActivity = [
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
     const colors = {
       user: 'bg-blue-500/10 text-blue-600',
       approval: 'bg-green-500/10 text-green-600',
-      swap: 'bg-purple-500/10 text-purple-600',
+      swap: 'bg-red-orange-500/10 text-red-orange-600',
       report: 'bg-red-500/10 text-red-600',
       listing: 'bg-orange-500/10 text-orange-600'
     };
@@ -74,12 +74,12 @@ const AdminDashboard = () => {
             <AreaChart data={swapTrendsData}>
               <defs>
                 <linearGradient id="swapGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#ff6465" stopOpacity={0.3}/>
+                  <stop offset="95%" stopColor="#ff6465" stopOpacity={0}/>
                 </linearGradient>
                 <linearGradient id="itemGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#EC4899" stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor="#EC4899" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#ff3031" stopOpacity={0.3}/>
+                  <stop offset="95%" stopColor="#ff3031" stopOpacity={0}/>
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#374151" opacity={0.3} />
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
               <Area
                 type="monotone"
                 dataKey="swaps"
-                stroke="#8B5CF6"
+                stroke="#ff6465"
                 strokeWidth={3}
                 fillOpacity={1}
                 fill="url(#swapGradient)"
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
               <Area
                 type="monotone"
                 dataKey="items"
-                stroke="#EC4899"
+                stroke="#ff3031"
                 strokeWidth={3}
                 fillOpacity={1}
                 fill="url(#itemGradient)"

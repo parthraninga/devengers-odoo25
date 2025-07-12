@@ -24,6 +24,19 @@ export default {
 				'display': ['Playfair Display', 'serif'],
 			},
 			colors: {
+				'red-orange': {
+					'50': '#fff1f1',
+					'100': '#ffdfdf',
+					'200': '#ffc5c5',
+					'300': '#ff9d9d',
+					'400': '#ff6465',
+					'500': '#ff3031',
+					'600': '#ed1516',
+					'700': '#c80d0e',
+					'800': '#a50f10',
+					'900': '#881415',
+					'950': '#4b0404',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -113,10 +126,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 20px rgba(168, 85, 247, 0.4)' 
+						boxShadow: '0 0 20px rgba(255, 48, 49, 0.4)' 
 					},
 					'50%': { 
-						boxShadow: '0 0 40px rgba(168, 85, 247, 0.8)' 
+						boxShadow: '0 0 40px rgba(255, 48, 49, 0.8)' 
 					},
 				}
 			},

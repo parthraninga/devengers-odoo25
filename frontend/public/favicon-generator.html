@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .instructions { background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>ReWear Favicon Generator</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Right-click on the canvas below</li>
+            <li>Select "Save image as..."</li>
+            <li>Save as "favicon.png"</li>
+            <li>Use an online converter to convert PNG to ICO format</li>
+            <li>Replace the existing favicon.ico in your public folder</li>
+        </ol>
+    </div>
+    
+    <canvas id="favicon" width="32" height="32"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Fill background with red-orange gradient
+        const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+        gradient.addColorStop(0, '#ff6465');
+        gradient.addColorStop(0.5, '#ff3031');
+        gradient.addColorStop(1, '#ed1516');
+        
+        // Draw rounded rectangle background
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.roundRect(0, 0, 32, 32, 8);
+        ctx.fill();
+        
+        // Draw 'R' letter
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('R', 16, 16);
+    </script>
+</body>
+</html>

@@ -10,8 +10,8 @@ const SummaryCards = () => {
       change: '+12%',
       trend: 'up',
       icon: Users,
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'bg-blue-500/10',
+      color: 'from-red-orange-400 to-red-orange-600',
+      bgColor: 'bg-red-orange-500/10',
     },
     {
       title: 'Items Pending',
@@ -19,8 +19,8 @@ const SummaryCards = () => {
       change: '+8%',
       trend: 'up',
       icon: Package,
-      color: 'from-orange-500 to-yellow-500',
-      bgColor: 'bg-orange-500/10',
+      color: 'from-red-orange-500 to-red-orange-700',
+      bgColor: 'bg-red-orange-600/10',
     },
     {
       title: 'Swaps Completed',
@@ -28,8 +28,8 @@ const SummaryCards = () => {
       change: '+24%',
       trend: 'up',
       icon: ArrowLeftRight,
-      color: 'from-green-500 to-emerald-500',
-      bgColor: 'bg-green-500/10',
+      color: 'from-red-orange-300 to-red-orange-500',
+      bgColor: 'bg-red-orange-400/10',
     },
     {
       title: 'Reports Generated',
@@ -37,8 +37,8 @@ const SummaryCards = () => {
       change: '-5%',
       trend: 'down',
       icon: AlertCircle,
-      color: 'from-red-500 to-pink-500',
-      bgColor: 'bg-red-500/10',
+      color: 'from-red-orange-600 to-red-orange-800',
+      bgColor: 'bg-red-orange-700/10',
     },
   ];
 
@@ -50,7 +50,7 @@ const SummaryCards = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
-          className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300"
+          className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-xl hover:shadow-red-orange-500/10 card-hover transition-all duration-300"
         >
           <div className="flex items-center justify-between mb-4">
             <div className={`p-3 rounded-xl ${card.bgColor}`}>

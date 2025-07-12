@@ -1,0 +1,11 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners for iOS -->
+  <rect width="180" height="180" rx="40" fill="#ff3031"/>
+  
+  <!-- Shirt icon -->
+  <path d="M56.25 73.125L67.5 62.5H112.5L123.75 73.125V84.375L112.5 90V146.25H67.5V90L56.25 84.375V73.125Z" fill="#ffffff"/>
+  <path d="M67.5 62.5V50.625C67.5 47.8125 70.3125 45 73.125 45H106.875C109.6875 45 112.5 47.8125 112.5 50.625V62.5" fill="none" stroke="#ffffff" stroke-width="5.625" stroke-linecap="round"/>
+  
+  <!-- R letter -->
+  <text x="90" y="123.75" font-family="Arial, sans-serif" font-size="56.25" font-weight="bold" text-anchor="middle" fill="#ffffff">R</text>
+</svg>

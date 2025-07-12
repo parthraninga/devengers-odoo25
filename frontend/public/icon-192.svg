@@ -1,0 +1,11 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="192" height="192" rx="48" fill="#ff3031"/>
+  
+  <!-- Shirt icon in white -->
+  <path d="M60 78L72 66H120L132 78V90L120 96V156H72V96L60 90V78Z" fill="#ffffff"/>
+  <path d="M72 66V54C72 51 75 48 78 48H114C117 48 120 51 120 54V66" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- R letter -->
+  <text x="96" y="132" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="#ffffff">R</text>
+</svg>

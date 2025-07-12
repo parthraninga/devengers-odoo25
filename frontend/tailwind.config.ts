@@ -19,6 +19,19 @@ export default {
 		},
 		extend: {
 			colors: {
+				'red-orange': {
+					'50': '#fff1f1',
+					'100': '#ffdfdf',
+					'200': '#ffc5c5',
+					'300': '#ff9d9d',
+					'400': '#ff6465',
+					'500': '#ff3031',
+					'600': '#ed1516',
+					'700': '#c80d0e',
+					'800': '#a50f10',
+					'900': '#881415',
+					'950': '#4b0404',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

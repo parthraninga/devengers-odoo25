@@ -177,7 +177,7 @@ const Browse = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-br from-red-orange-50 to-red-orange-100 dark:from-gray-900 dark:to-gray-800">
         <div className="container-padding max-w-7xl mx-auto py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
@@ -197,7 +197,7 @@ const Browse = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-red-orange-50 to-red-orange-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container-padding max-w-7xl mx-auto py-8">
         {/* Header */}
         <div className="text-center mb-8">

@@ -65,29 +65,29 @@ const Index = () => {
       icon: <Recycle className="h-8 w-8" />,
       title: "Sustainable Fashion",
       description: "Give your clothes a second life and reduce fashion waste through community swapping.",
-      color: "from-emerald-500 to-teal-600",
-      bg: "bg-emerald-500/10"
+      color: "from-red-orange-400 to-red-orange-600",
+      bg: "bg-red-orange-500/10"
     },
     {
       icon: <Users className="h-8 w-8" />,
       title: "Community Driven",
       description: "Connect with like-minded individuals who share your passion for sustainable living.",
-      color: "from-blue-500 to-indigo-600",
-      bg: "bg-blue-500/10"
+      color: "from-red-orange-500 to-red-orange-700",
+      bg: "bg-red-orange-500/10"
     },
     {
       icon: <Heart className="h-8 w-8" />,
       title: "Quality First",
       description: "All items are verified for quality, ensuring you receive beautiful pre-loved pieces.",
-      color: "from-rose-500 to-pink-600",
-      bg: "bg-rose-500/10"
+      color: "from-red-orange-300 to-red-orange-500",
+      bg: "bg-red-orange-500/10"
     },
     {
       icon: <Zap className="h-8 w-8" />,
       title: "Instant Swaps",
       description: "Quick and easy swapping process with real-time notifications and updates.",
-      color: "from-amber-500 to-orange-600",
-      bg: "bg-amber-500/10"
+      color: "from-red-orange-600 to-red-orange-800",
+      bg: "bg-red-orange-500/10"
     }
   ];
 
@@ -98,7 +98,7 @@ const Index = () => {
       avatar: "SC",
       content: "ReWear has transformed how I approach fashion. I've discovered amazing pieces while decluttering my wardrobe sustainably.",
       rating: 5,
-      color: "from-purple-400 to-violet-600"
+      color: "from-red-orange-400 to-red-orange-600"
     },
     {
       name: "Mike Rodriguez",
@@ -123,7 +123,7 @@ const Index = () => {
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute w-96 h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse"
+          className="absolute w-96 h-96 bg-gradient-to-r from-red-orange-400/20 to-red-orange-500/20 rounded-full blur-3xl animate-pulse"
           style={{
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
             top: '10%',
@@ -131,7 +131,7 @@ const Index = () => {
           }}
         />
         <div 
-          className="absolute w-96 h-96 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse"
+          className="absolute w-96 h-96 bg-gradient-to-r from-red-orange-300/20 to-red-orange-400/20 rounded-full blur-3xl animate-pulse"
           style={{
             transform: `translate(${mousePosition.x * -0.02}px, ${mousePosition.y * -0.02}px)`,
             top: '60%',
@@ -155,37 +155,37 @@ const Index = () => {
         <div className="container-padding max-w-7xl mx-auto">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/25">
+              <div className="w-12 h-12 bg-gradient-to-r from-red-orange-500 to-red-orange-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-orange-500/25 glow-red-orange">
                 <Shirt className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold text-gradient">
                 ReWear
               </span>
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/browse" className="text-gray-600 hover:text-purple-600 transition-colors font-medium">Browse</Link>
-              <Link to="/#features" className="text-gray-600 hover:text-purple-600 transition-colors font-medium">Features</Link>
-              <Link to="/#about" className="text-gray-600 hover:text-purple-600 transition-colors font-medium">About</Link>
+              <Link to="/browse" className="text-gray-600 hover:text-red-orange-600 transition-colors font-medium">Browse</Link>
+              <Link to="/#features" className="text-gray-600 hover:text-red-orange-600 transition-colors font-medium">Features</Link>
+              <Link to="/#about" className="text-gray-600 hover:text-red-orange-600 transition-colors font-medium">About</Link>
             </div>
 
             <div className="flex items-center space-x-4">
               {user ? (
                 <Button 
                   onClick={() => navigate('/dashboard')}
-                  className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-6 py-2 rounded-full font-medium shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300"
+                  className="bg-red-orange-500 hover:bg-red-orange-600 text-white px-6 py-2 rounded-full font-medium glow-red-orange hover:shadow-red-orange-500/40 transition-all duration-300"
                 >
                   Dashboard
                 </Button>
               ) : (
                 <div className="flex items-center space-x-3">
                   <Link to="/login">
-                    <Button variant="ghost" className="text-gray-600 hover:text-purple-600 font-medium">
+                    <Button variant="ghost" className="text-gray-600 hover:text-red-orange-600 font-medium">
                       Sign In
                     </Button>
                   </Link>
                   <Link to="/register">
-                    <Button className="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-6 py-2 rounded-full font-medium shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300">
+                    <Button className="bg-red-orange-500 hover:bg-red-orange-600 text-white px-6 py-2 rounded-full font-medium glow-red-orange hover:shadow-red-orange-500/40 transition-all duration-300">
                       Get Started
                     </Button>
                   </Link>
@@ -202,7 +202,7 @@ const Index = () => {
           <div className="space-y-8 animate-fade-in">
             <Badge 
               variant="secondary" 
-              className="backdrop-blur-md bg-white/10 border border-white/20 text-purple-700 dark:text-purple-300 px-6 py-3 text-sm font-medium rounded-full shadow-lg"
+              className="backdrop-blur-md bg-white/10 border border-white/20 text-red-orange-700 dark:text-red-orange-300 px-6 py-3 text-sm font-medium rounded-full shadow-lg"
             >
               <Sparkles className="h-4 w-4 mr-2" />
               Join the Sustainable Fashion Revolution
@@ -210,10 +210,10 @@ const Index = () => {
             
             <div className="space-y-6">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent block">
+                <span className="bg-gradient-to-r from-red-orange-600 via-red-orange-500 to-red-orange-700 bg-clip-text text-transparent block">
                   Swap, Share
                 </span>
-                <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent block">
+                <span className="bg-gradient-to-r from-red-orange-400 via-red-orange-300 to-red-orange-500 bg-clip-text text-transparent block">
                   & Shine
                 </span>
                 <span className="text-gray-900 dark:text-white block text-4xl md:text-5xl lg:text-6xl mt-4">
@@ -223,9 +223,9 @@ const Index = () => {
               
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
                 Transform your wardrobe sustainably. Connect with a community that values 
-                <span className="font-semibold text-purple-600"> style</span>, 
+                <span className="font-semibold text-red-orange-600"> style</span>, 
                 <span className="font-semibold text-emerald-600"> sustainability</span>, and 
-                <span className="font-semibold text-blue-600"> sharing</span>.
+                <span className="font-semibold text-red-orange-500"> sharing</span>.
               </p>
             </div>
             
@@ -233,7 +233,7 @@ const Index = () => {
               <Button 
                 onClick={() => navigate(user ? '/browse' : '/register')}
                 size="lg"
-                className="group bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transform hover:scale-105 transition-all duration-300"
+                className="group bg-red-orange-500 hover:bg-red-orange-600 text-white px-10 py-4 text-lg font-semibold rounded-2xl glow-red-orange hover:shadow-red-orange-500/40 transform hover:scale-105 transition-all duration-300"
               >
                 {user ? 'Start Browsing' : 'Join ReWear Free'}
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -243,7 +243,7 @@ const Index = () => {
                 variant="outline" 
                 size="lg"
                 onClick={() => navigate('/browse')}
-                className="group backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 px-10 py-4 text-lg font-semibold rounded-2xl text-gray-700 dark:text-gray-200 hover:text-purple-600 transition-all duration-300"
+                className="group backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 px-10 py-4 text-lg font-semibold rounded-2xl text-gray-700 dark:text-gray-200 hover:text-red-orange-600 transition-all duration-300"
               >
                 <ShoppingBag className="mr-3 h-5 w-5" />
                 Explore Items
@@ -259,10 +259,10 @@ const Index = () => {
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div className="flex items-center justify-center space-x-2 mb-2">
-                    <div className="text-purple-600 group-hover:scale-110 transition-transform">
+                    <div className="text-red-orange-600 group-hover:scale-110 transition-transform">
                       {stat.icon}
                     </div>
-                    <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold text-gradient">
                       {stat.value}
                     </div>
                   </div>
@@ -290,7 +290,7 @@ const Index = () => {
               Why Choose ReWear
             </Badge>
             <h2 className="text-4xl md:text-6xl font-bold">
-              <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
+              <span className="text-gradient">
                 Fashion with
               </span>
               <br />
@@ -305,13 +305,13 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index}
-                className={`group backdrop-blur-xl bg-white/60 dark:bg-gray-800/60 border border-white/20 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10 ${
+                className={`group backdrop-blur-xl bg-white/60 dark:bg-gray-800/60 border border-white/20 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-orange-500/10 card-hover ${
                   isVisible.features ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-8 text-center space-y-6">
-                  <div className={`w-20 h-20 mx-auto bg-gradient-to-r ${feature.color} rounded-3xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-20 h-20 mx-auto bg-gradient-to-r ${feature.color} rounded-3xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300 glow-red-orange`}>
                     {feature.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{feature.title}</h3>
@@ -324,7 +324,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-32 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
+      <section id="testimonials" className="py-32 bg-gradient-to-r from-red-orange-50 to-red-orange-100 dark:from-gray-900 dark:to-gray-800">
         <div className="container-padding max-w-7xl mx-auto">
           <div id='testimonials'
             data-animate
@@ -337,7 +337,7 @@ const Index = () => {
               User Stories
             </Badge>
             <h2 className="text-4xl md:text-6xl font-bold">
-              <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
+              <span className="text-gradient">
                 What Our Community
               </span>
               <br />
@@ -381,7 +381,7 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600" />
+        <div className="absolute inset-0 gradient-secondary" />
         <div className="absolute inset-0 bg-black/10" />
         
         {/* Animated shapes */}
@@ -404,7 +404,7 @@ const Index = () => {
               <Button 
                 onClick={() => navigate(user ? '/browse' : '/register')}
                 size="lg"
-                className="group bg-white text-purple-600 hover:bg-gray-100 px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="group bg-white text-red-orange-600 hover:bg-gray-100 px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 {user ? 'Start Swapping Now' : 'Join Free Today'}
                 <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -429,7 +429,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-violet-600 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-r from-red-orange-500 to-red-orange-600 rounded-xl flex items-center justify-center glow-red-orange">
                   <Shirt className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-bold">ReWear</span>

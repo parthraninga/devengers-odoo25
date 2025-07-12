@@ -39,7 +39,7 @@ const AdminSidebar = () => {
       {/* Header */}
       <div className={`p-6 border-b border-white/10 ${collapsed ? 'px-4' : ''}`}>
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
+          <div className="p-2 bg-gradient-to-r from-red-orange-500 to-red-orange-600 rounded-lg">
             <Crown className="w-6 h-6 text-white" />
           </div>
           {!collapsed && (
@@ -54,7 +54,7 @@ const AdminSidebar = () => {
       {/* Admin Profile */}
       <div className={`p-4 border-b border-white/10 ${collapsed ? 'px-2' : ''}`}>
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-r from-red-orange-500 to-red-orange-600 rounded-full flex items-center justify-center">
             <span className="text-white font-bold text-sm">
               {admin?.name?.charAt(0) || 'A'}
             </span>
@@ -76,7 +76,7 @@ const AdminSidebar = () => {
             to={item.path}
             className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-200 group ${
               isActive(item.path)
-                ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25'
+                ? 'bg-gradient-to-r from-red-orange-600 to-red-orange-700 text-white shadow-lg glow-red-orange'
                 : 'text-gray-300 hover:bg-white/10 hover:text-white'
             } ${collapsed ? 'justify-center' : ''}`}
           >
