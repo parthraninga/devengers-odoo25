@@ -2,6 +2,16 @@
 
 **Ideation stage repository for Team Devengers’ Odoo hackathon project**
 
+---
+
+## Problem Statement
+
+### Overview
+Develop **ReWear**, a web-based platform that enables users to exchange unused clothing through **direct swaps** or a **point-based redemption system**.
+
+The goal is to **promote sustainable fashion** and **reduce textile waste** by encouraging people to reuse wearable garments rather than discard them.
+
+---
 
 ## Team
 
