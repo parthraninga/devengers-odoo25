@@ -1,0 +1,36 @@
+# Node.js
+node_modules/
+bun.lockb
+package-lock.json
+
+# Build output
+dist/
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun.lockb
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*.local
+
+# Docker
+*.localdev
+docker-compose.override.yml
+
+# Misc
+coverage/
+*.log
