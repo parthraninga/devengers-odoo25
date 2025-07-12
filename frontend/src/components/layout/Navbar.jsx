@@ -22,7 +22,7 @@ import {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logout } = useAuth();
+  const { user, logoutUser } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   const handleLogout = () => {
-    logout();
+    logoutUser();
     navigate('/');
   };
 
@@ -103,9 +103,17 @@ const Navbar = () => {
                     to="/profile"
                     className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-muted/50 transition-colors"
                   >
-                    <div className="w-8 h-8 gradient-secondary rounded-full flex items-center justify-center">
-                      <User className="h-4 w-4 text-white" />
-                    </div>
+                   <div className="w-8 h-8 gradient-secondary rounded-full flex items-center justify-center overflow-hidden">
+  {user.profilePic?.url ? (
+    <img
+      src={user.profilePic.url}
+      alt={user.name}
+      className="w-full h-full object-cover"
+    />
+  ) : (
+    <User className="h-4 w-4 text-white" />
+  )}
+</div>
                     <span className="font-medium">{user.name || 'User'}</span>
                   </Link>
                   
