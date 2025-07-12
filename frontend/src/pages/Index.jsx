@@ -279,7 +279,7 @@ const Index = () => {
       {/* Features Section */}
       <section id="features" className="py-32 relative">
         <div className="container-padding max-w-7xl mx-auto">
-          <div 
+          <div id='features'
             data-animate
             className={`text-center space-y-6 mb-20 transition-all duration-1000 ${
               isVisible.features ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -326,7 +326,7 @@ const Index = () => {
       {/* Testimonials Section */}
       <section id="testimonials" className="py-32 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
         <div className="container-padding max-w-7xl mx-auto">
-          <div 
+          <div id='testimonials'
             data-animate
             className={`text-center space-y-6 mb-20 transition-all duration-1000 ${
               isVisible.testimonials ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -413,7 +413,7 @@ const Index = () => {
                 variant="outline" 
                 size="lg"
                 onClick={() => navigate('/browse')}
-                className="group border-white/30 text-white hover:bg-white/10 backdrop-blur-md px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300"
+                className="group border-white/30 text-black hover:bg-white/10 hover:text-white backdrop-blur-md px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300"
               >
                 <ShoppingBag className="mr-3 h-5 w-5" />
                 Browse Collection
